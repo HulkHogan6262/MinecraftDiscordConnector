@@ -16,17 +16,15 @@ import java.io.IOException;
 
 public class Main extends JavaPlugin {
 
-    private static Config config;
-
     @Override
     public void onEnable() {
+        saveDefaultConfig();
         System.out.println("Plugin activé !");
         Server server = this.getServer();
-        config = new Config(this);
-        String token = config.getBotToken();
+        String token = getConfig().getString("BotToken");
         System.out.println(token);
-        String server_name = config.getServerName();
-        Integer channel_id = config.getChannelId();
+        String server_name = getConfig().getString("ServerName", "Server");
+        Integer channel_id = getConfig().getInt("ChannelID");
         try{
             JDA jda = new JDABuilder(token).build();
             System.out.println("Connecté à Discord !");
