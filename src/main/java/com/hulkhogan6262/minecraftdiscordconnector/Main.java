@@ -37,12 +37,6 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
-
-        try {
-            config.save();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         System.out.println("Plugin désactivé !");
     }
 
