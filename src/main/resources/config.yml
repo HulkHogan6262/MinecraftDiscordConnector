@@ -1,0 +1,5 @@
+ServerName: 'Server Name Here'
+
+BotToken: 'TOKEN HERE'
+GuildID: 000000
+ChannelID : 000000
