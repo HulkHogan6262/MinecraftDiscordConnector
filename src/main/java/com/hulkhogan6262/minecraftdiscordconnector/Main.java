@@ -25,10 +25,11 @@ public class Main extends JavaPlugin {
         System.out.println(token);
         String server_name = getConfig().getString("ServerName", "Server");
         Integer channel_id = getConfig().getInt("ChannelID");
+        System.out.println(channel_id);
         try{
             JDA jda = new JDABuilder(token).build();
             System.out.println("Connecté à Discord !");
-            TextChannel channel = jda.getTextChannelById(channel_id);
+            TextChannel channel = jda.getTextChannelById(getConfig().getString("ChannelID"));
             channel.sendMessage("Nom du serveur : " + server_name);
         }  catch (LoginException e) {
             e.printStackTrace();
